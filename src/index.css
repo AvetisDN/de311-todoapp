@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  /* Color Tokens */
+  --color-background: var(--color-mist-200);
+  --color-foreground: var(--color-mist-700);
+  --color-card: var(--color-mist-100);
+  --color-card-foreground: var(--color-mist-700);
+  --color-popover: var(--color-mist-50);
+  --color-popover-foreground: var(--color-mist-800);
+  --color-primary: var(--color-teal-600);
+  --color-primary-foreground: var(--color-teal-50);
+  --color-secondary: var(--color-cyan-700);
+  --color-secondary-foreground: var(--color-cyan-50);
+  --color-muted: var(--color-mist-400);
+  --color-muted-foreground: var(--color-mist-600);
+  --color-destructive: var(--color-mist-600);
+  --color-destructive-foreground: var(--color-mist-50);
+
+  --color-border: var(--color-mist-300);
+  --color-input: var(--color-mist-300);
+  --color-ring: var(--color-mist-500);
+}
+
+.dark {
+  --color-background: var(--color-mist-950);
+  --color-foreground: var(--color-mist-300);
+  --color-card: var(--color-mist-900);
+  --color-card-foreground: var(--color-mist-200);
+  --color-popover: var(--color-mist-800);
+  --color-popover-foreground: var(--color-mist-100);
+  --color-muted-foreground: var(--color-mist-400);
+  --color-muted: var(--color-mist-600);
+
+  --color-border: var(--color-mist-600);
+  --color-input: var(--color-mist-800);
+  --color-ring: var(--color-mist-700);
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+  }
+  button {
+    @apply cursor-pointer;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fade-in 400ms ease 1 forwards;
+}
+
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    translate: 0 -100%;
+  }
+  100% {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+.animate-slideDown {
+  animation: slide-down 400ms ease 1 forwards;
+}
