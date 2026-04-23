@@ -1,12 +1,10 @@
 import { useState, useEffect } from "react";
 import { Moon, Sun } from "lucide-react";
 import { useProfile } from "../../hooks/useProfile";
-import { t } from "../../lib/i18n";
 import { Button } from "../ui/Button";
 
 export const ThemeToggle = () => {
   const { profile } = useProfile();
-  const language = profile?.language_preference ?? "zh-CN";
   const [theme, setTheme] = useState<"light" | "dark">(() => {
     if (typeof window !== "undefined") {
       const savedTheme = localStorage.getItem("theme");

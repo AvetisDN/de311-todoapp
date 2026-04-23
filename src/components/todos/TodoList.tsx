@@ -27,7 +27,7 @@ export function TodoList({
   const { todos, isLoading, fetchTodos } = useTodos();
   const { fetchCategories } = useCategories();
   const { profile } = useProfile();
-  const language = profile?.language_preference ?? "zh-CN";
+  const language = profile?.language_preference ?? "ru-RU";
   const fallbackEmptyMessage = t(language, "emptyNoTasksFound");
   const [showCompleted, setShowCompleted] = useState(false);
 
